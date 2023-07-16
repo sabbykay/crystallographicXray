@@ -1,5 +1,6 @@
 import pygame
 from clifford import Cl
+
 pygame.init()
 
 width, height = 800, 600
@@ -22,33 +23,33 @@ button_positions = [
     (button_padding, 3 * button_padding + 2 * button_height),
     (button_padding, 4 * button_padding + 3 * button_height),
     (button_padding, 5 * button_padding + 4 * button_height),
-    (button_padding, 6 * button_padding + 5 * button_height)
+    (button_padding, 6 * button_padding + 5 * button_height),
 ]
 
 button_color = (100, 100, 100)
 button_hover_color = (150, 150, 150)
 
+
 # Increment angle function
 def increment_angle(index):
     angles[index] += 0.1
+
 
 # Decrement angle function
 def decrement_angle(index):
     angles[index] -= 0.1
 
+
 # Check button click function
 def check_button_click(mouse_pos, index):
     button_x, button_y = button_positions[index]
-    return button_x <= mouse_pos[0] <= button_x + button_width and button_y <= mouse_pos[1] <= button_y + button_height
+    return (
+        button_x <= mouse_pos[0] <= button_x + button_width
+        and button_y <= mouse_pos[1] <= button_y + button_height
+    )
 
-button_labels = [
-    "Angle 1 +",
-    "Angle 1 -",
-    "Angle 2 +",
-    "Angle 2 -",
-    "Angle 3 +",
-    "Angle 3 -"
-]
+
+button_labels = ["Angle 1 +", "Angle 1 -", "Angle 2 +", "Angle 2 -", "Angle 3 +", "Angle 3 -"]
 
 running = True
 while running:
