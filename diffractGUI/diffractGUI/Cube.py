@@ -1,7 +1,7 @@
 from Mesh3D import *
 
 class Cube(Mesh3D):
-    def __init__(self, draw_type, filename):
+    def __init__(self, draw_type):
         self.vertices = [(0.5, -0.5, 0.5),
                         (-0.5, -0.5, 0.5),
                         (0.5, 0.5, 0.5),
@@ -58,5 +58,5 @@ class Cube(Mesh3D):
                    (1.0, 0.0)]
 
         Mesh3D.draw_type = draw_type
-        Mesh3D.texture = pygame.image.load(filename)
+        #Mesh3D.texture = pygame.image.load(filename)
         #Mesh3D.int_texture(self)

@@ -22,9 +22,15 @@ objects_2d = []
 
 cube = Object("Cube")
 cube.add_component(Transform((0, 0, -5)))
-cube.add_component(Cube(GL_POLYGON, "/Users/ssullens/crystallographicXray/diffractGUI/diffractGUI/resources/pexels-george-chambers-16317911.jpg"))
+cube.add_component(Cube(GL_POLYGON))
 
 objects_3d.append(cube)
+
+xraybeam = Object("XrayBeam")
+xraybeam.add_component(Transform((0, 0, -5)))
+xraybeam.add_component(XrayBeam((-10, -10, -10), (20, 20, 20)))
+
+objects_3d.append(xraybeam)
 
 def button_click():
     print("Hello Button")
