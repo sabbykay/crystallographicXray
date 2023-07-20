@@ -22,6 +22,8 @@ class Object:
                 c.draw()
             if isinstance(c, Button):
                 c.draw(events)
+            if isinstance(c, XrayBeam):
+                c.draw()
 
         glPopMatrix()
 

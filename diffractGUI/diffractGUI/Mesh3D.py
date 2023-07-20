@@ -57,3 +57,18 @@ class TextureMesh3D:
         glBindTexture(GL_TEXTURE_2D, self.texID)
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR)
         glTexImage2D(GL_TEXTURE_2D, 0, 3, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, textureData)
+
+class XrayBeam:
+
+    def __init__(self, start_point, end_point):
+        self.start_point = start_point
+        self.end_point = end_point
+
+    def draw(self):
+        glColor3fv((0, 1, 0))
+        glBegin(GL_LINES)
+        glVertex3fv((self.start_point[0], self.start_point[1],
+                         self.start_point[2]))
+        glVertex3fv((self.end_point[0], self.end_point[1],
+                         self.end_point[2]))
+        glEnd()
