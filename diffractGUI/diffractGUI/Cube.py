@@ -59,4 +59,4 @@ class Cube(Mesh3D):
 
         Mesh3D.draw_type = draw_type
         Mesh3D.texture = pygame.image.load(filename)
-        Mesh3D.int_texture(self)
+        #Mesh3D.int_texture(self)
