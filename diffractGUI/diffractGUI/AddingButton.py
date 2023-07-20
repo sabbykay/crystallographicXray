@@ -97,5 +97,5 @@ while not done:
     glPopMatrix()
     pygame.display.flip()
     clock.tick(fps)
-    print(pygame.mouse.get_pos())
+    #print(pygame.mouse.get_pos())
 pygame.quit()
