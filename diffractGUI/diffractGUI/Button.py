@@ -1,8 +1,9 @@
 import pygame.mouse
 from OpenGL.GL import *
-from Utils import *
 from pygame.locals import *
 from Settings import *
+from Utils import *
+
 
 class Button:
     def __init__(self, screen, position, width, height, color, o_color, p_color, on_click):
@@ -15,6 +16,8 @@ class Button:
         self.pressed_color = p_color
         self.on_click = on_click
         self.mouse_down = False
+
+        self.label = "button"
 
 
     def draw(self, events):
@@ -49,3 +52,20 @@ class Button:
         glVertex2f(self.position[0], self.position[1] + self.height)
         glEnd()
         glPopMatrix()
+
+        self.draw_text(self.label)
+
+    def draw_text(self, text):
+        # reference: https://stackoverflow.com/questions/67608968/pygame-opengl-display-text
+        font = pygame.font.SysFont("arial", 16)
+        font_color = (255, 255, 66, 255)
+        text_surface = font.render(text, True, font_color).convert_alpha()
+        text_data = pygame.image.tostring(text_surface, "RGBA", True)
+        glWindowPos2d(self.position[0], self.position[1])
+        glDrawPixels(
+            text_surface.get_width(),
+            text_surface.get_height(),
+            GL_RGBA,
+            GL_UNSIGNED_BYTE,
+            text_data,
+        )
