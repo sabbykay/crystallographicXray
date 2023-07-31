@@ -1,23 +1,17 @@
 import pygame
 
-def setup():
-    pygame.init()
-    display_width, display_height = 800, 600
-    pygame.display.set_mode((display_width, display_height))
-    pygame.display.set_caption("Hellow Window")
-    window = (255, 255, 255)
+pygame.init()
 
-def main():
-    setup()
-    while True:
-        for event in pygame.event.get():
-            if event.type == pygame.QUIT:
-                if event.type == pygame.QUIT:
-                    pygame.quit()
-                    quit()
+screen_width = 1000
+screen_height = 800
+screen = pygame.display.set_mode((screen_width,screen_height))
+pygame.display.set_caption("Hellow World")
 
-                window.fill((255, 255, 255))
-                pygame.display.update()
-
-if __name__ == '__main__':
-    main()
+done = False
+while not done:
+    for event in pygame.event.get() :
+        if event.type == pygame.QUIT:
+            done = True
+    pygame.display.update()
+    
+pygame.quit()
