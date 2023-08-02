@@ -1,14 +1,16 @@
 import math
+import numpy as np
 
 from AtomicPlanes import AtomicPlanes
-from ga import angle_between_planes
-from Cube import *
+from ga import angle_between_planes, make_rotor
+from Cube import Cube
+from Mesh3D import Mesh3D, Grid
 from Plane import Plane
-from Object import *
-from OpenGL.GL import *
-from OpenGL.GLU import *
-from pygame.locals import *
-from Settings import *
+from Object import * #Object for the humans 
+from OpenGL.GL import * #everything that starts with gl
+from OpenGL.GLU import * #everything that starts with glu
+from pygame.locals import DOUBLEBUF, OPENGL
+from Settings import window_dimensions, gui_dimensions
 
 pygame.init()
 screen_width = math.fabs(window_dimensions[1] - window_dimensions[0])
@@ -36,7 +38,7 @@ objects_3d.append(cube)
 
 xraybeam = Object("XrayBeam")
 xraybeam.add_component(Transform((0, 0, -5)))
-xraybeam.add_component(XrayBeam((-10, -10, -10), (20, 20, 20)))
+xraybeam.add_component(XrayBeam((-10, 0, 0), (20, 0, 0)))
 
 objects_3d.append(xraybeam)
 
@@ -47,6 +49,12 @@ plane_object_3d.add_component(Transform((0, 0, -5)))
 plane_object_3d.add_component(plane)
 
 objects_3d.append(plane_object_3d)
+
+grid = Object("Grid")
+grid.add_component(Transform((0, 0, -5)))
+grid.add_component(Grid(0.5, 8, (0, 0, 255)))
+
+objects_3d.append(grid)
 
 
 def button_click(the_rotation, increment):

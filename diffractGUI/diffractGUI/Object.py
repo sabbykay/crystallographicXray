@@ -1,6 +1,7 @@
-from Button import *
-from Mesh3D import Mesh3D, XrayBeam
-from Transform import *
+from Button import * #Button
+from Mesh3D import Mesh3D, XrayBeam, Grid
+from OpenGL.GL import * #everything that starts with gl
+from Transform import Transform, Rotation, RotationList
 
 
 class Object:
@@ -40,7 +41,8 @@ class Object:
                 c.draw(events)
             if isinstance(c, XrayBeam):
                 c.draw()
-
+            if isinstance(c, Grid):
+                c.draw()
         glPopMatrix()
 
     def get_component(self, class_type):
