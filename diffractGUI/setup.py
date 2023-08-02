@@ -39,7 +39,7 @@ with open(path.join(here, "requirements.txt")) as requirements_file:
 
 
 setup(
-    name="crystalxrayinterface",
+    name="diffractGUI",
     version=versioneer.get_version(),
     cmdclass=versioneer.get_cmdclass(),
     description="graphical user interface for single crystal xray diffractometer",

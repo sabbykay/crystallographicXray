@@ -2,6 +2,8 @@ from Mesh3D import *
 
 class Cube(Mesh3D):
     def __init__(self, draw_type):
+        super().__init__()
+        #self.color = (0, 1, 0)
         self.vertices = [(0.5, -0.5, 0.5),
                         (-0.5, -0.5, 0.5),
                         (0.5, 0.5, 0.5),
