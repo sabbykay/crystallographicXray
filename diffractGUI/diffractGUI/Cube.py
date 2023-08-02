@@ -1,4 +1,4 @@
-from Mesh3D import *
+from Mesh3D import Mesh3D
 
 class Cube(Mesh3D):
     def __init__(self, draw_type):

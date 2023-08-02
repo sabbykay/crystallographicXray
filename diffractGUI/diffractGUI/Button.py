@@ -1,8 +1,8 @@
 import pygame.mouse
-from OpenGL.GL import *
-from pygame.locals import *
-from Settings import *
-from Utils import *
+from OpenGL.GL import * #everything starting with gl 
+from pygame.locals import * 
+from Settings import window_dimensions, gui_dimensions
+from Utils import map_value
 
 
 class Button:
