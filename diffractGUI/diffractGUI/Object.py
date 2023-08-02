@@ -1,5 +1,5 @@
 from Button import *
-from Mesh3D import *
+from Mesh3D import Mesh3D, XrayBeam
 from Transform import *
 
 
