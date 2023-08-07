@@ -3,7 +3,6 @@ from Mesh3D import Mesh3D, XrayBeam, Grid
 from OpenGL.GL import * #everything that starts with gl
 from Transform import Transform, Rotation, RotationList
 
-
 class Object:
     def __init__(self, obj_name):
         self.name = obj_name

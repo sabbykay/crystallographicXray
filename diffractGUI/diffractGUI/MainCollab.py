@@ -1,6 +1,5 @@
 import math
 import numpy as np
-
 from AtomicPlanes import AtomicPlanes
 from ga import angle_between_planes, make_rotor
 from Cube import Cube
@@ -16,7 +15,7 @@ pygame.init()
 screen_width = math.fabs(window_dimensions[1] - window_dimensions[0])
 screen_height = math.fabs(window_dimensions[3] - window_dimensions[2])
 
-pygame.display.set_caption("OpenGL in Python")
+pygame.display.set_caption("Atomic Plane and Crystal Display")
 screen = pygame.display.set_mode((screen_width, screen_height), DOUBLEBUF | OPENGL)
 
 done = False
@@ -43,7 +42,6 @@ xraybeam.add_component(XrayBeam((-10, 0, 0), (20, 0, 0)))
 objects_3d.append(xraybeam)
 
 plane = Plane(GL_POLYGON)
-
 plane_object_3d = Object("Plane")
 plane_object_3d.add_component(Transform((0, 0, -5)))
 plane_object_3d.add_component(plane)
