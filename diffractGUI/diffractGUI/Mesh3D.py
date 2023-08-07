@@ -17,6 +17,7 @@ class Mesh3D:
         glColor3fv(self.color)
         for t in range(0, len(self.triangles), 3):
             glBegin(GL_LINE_LOOP)
+            #glBegin(GL_POLYGON)
             glVertex3fv(self.vertices[self.triangles[t]])
             glVertex3fv(self.vertices[self.triangles[t + 1]])
             glVertex3fv(self.vertices[self.triangles[t + 2]])
@@ -67,7 +68,7 @@ class XrayBeam:
         self.end_point = end_point
 
     def draw(self):
-        glColor3fv((0, 1, 0))
+        glColor3fv((1, 1, 0))
         glBegin(GL_LINES)
         glVertex3fv((self.start_point[0], self.start_point[1],
                          self.start_point[2]))
@@ -75,8 +76,9 @@ class XrayBeam:
                          self.end_point[2]))
         glEnd()
 
-class Grid():
-    def __init__(self, interval, halfsize, color):
+class Grid:
+
+    def __init__(self, interval, halfsize, color=(0.6, 0.8, 1.0)):
         self.interval = interval
         self.halfsize = halfsize
         self.color = color

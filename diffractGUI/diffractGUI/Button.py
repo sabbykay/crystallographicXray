@@ -4,7 +4,6 @@ from pygame.locals import *
 from Settings import window_dimensions, gui_dimensions
 from Utils import map_value
 
-
 class Button:
     def __init__(self, screen, position, width, height, color, o_color, p_color, on_click):
         self.screen = screen

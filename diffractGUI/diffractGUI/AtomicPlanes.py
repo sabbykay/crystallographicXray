@@ -1,9 +1,6 @@
 from itertools import combinations
-
 import numpy as np
-
 from diffractGUI.ga import add_h4_attributes, make_rotor, angle_between_line_and_plane
-
 
 class AtomicPlanes:
     def __init__(self):
